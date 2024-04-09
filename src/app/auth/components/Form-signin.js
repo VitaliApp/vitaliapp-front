@@ -2,8 +2,8 @@
 import Link from "next/link";
 import React from "react";
 import { useForm } from "react-hook-form";
-// import { userRegisterAPI } from "../api/register";
-// import { signIn } from "next-auth/react";
+import { userRegisterAPI } from "../api/register";
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 export default function FormSignin() {
@@ -15,28 +15,28 @@ export default function FormSignin() {
     formState: { errors },
   } = useForm();
 
-//   const onSubmitRegister = handleSubmit(async (data) => {
-//     const result = await userRegisterAPI(data);
-//     console.log('RESULT',result)
-//     if (result) {
-//       const res = await signIn("credentials", {
-//         email: data.email,
-//         password: data.password,
-//         redirect: false,
-//       });
-//       if (res.ok) {
-//         console.log(res, "res register form");
-//         router.push("/vitalli/home");
-//         reset();
-//       } else {
-//         console.log(res.error, "errorrrrrrrr");
-//       }
-//     }
-//   });
+  const onSubmitRegister = handleSubmit(async (data) => {
+    const result = await userRegisterAPI(data);
+    console.log('RESULT',result)
+    if (result.ok) {
+      const res = await signIn("credentials", {
+        email: data.email,
+        password: data.password,
+        redirect: false,
+      });
+      if (res.ok) {
+        console.log(res, "res register form, GOOD");
+        // router.push("/vitalli/home");
+        reset();
+      } else {
+        console.log(res.error, "errorrrrrrrr");
+      }
+    }
+  });
 
   return (
     <form
-      onSubmit={()=>console.log(data)}
+      onSubmit={onSubmitRegister}
       className="bg-red px-10 py-20 rounded-3xl border-gray-100"
     >
       <h1 className="text-5xl font-semibold font-josefin-regular">
