@@ -1,13 +1,13 @@
 "use client";
 import Image from "next/image";
-import { signOut } from "next-auth/react";
+// import { signOut } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useSession, getSession } from "next-auth/react";
+// import { useSession, getSession } from "next-auth/react";
 
 export default function NavBar() {
-  const { data: session, status } = useSession();
-  console.log(session?.user?.email, 'session')
+//   const { data: session, status } = useSession();
+//   console.log(session?.user?.email, 'session')
   const router = useRouter();
   const [navbar, setNavbar] = useState(false);
 
@@ -119,7 +119,7 @@ export default function NavBar() {
                     alt="icono flecha"
                     className="md:hidden"
                   />
-                  ¡Hola {session?.user?.email}!
+                  {/* ¡Hola {session?.user?.email}! */}
                 </div>
                 <ul
                   tabIndex={0}
