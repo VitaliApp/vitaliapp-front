@@ -2,7 +2,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-// import { signIn } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 export default function FormLogin() {
@@ -14,25 +14,25 @@ export default function FormLogin() {
     formState: { errors },
   } = useForm();
 
-//   const onSubmitLogin = handleSubmit(async (data) => {
-//     const res = await signIn("credentials", {
-//       email: data.email,
-//       password: data.password,
-//       redirect: false,
-//     });
-//     console.log('RES', res)
-//     if (res.ok) {
-//       console.log(res, "res login form");
-//       router.push("/vitalli/home");
-//       reset();
-//     } else {
-//       console.log(res.error, "errorrrrrrrr");
-//     }
-//   });
+  const onSubmitLogin = handleSubmit(async (data) => {
+    const res = await signIn("credentials", {
+      email: data.email,
+      password: data.password,
+      redirect: false,
+    });
+    console.log('RES', res)
+    if (res.ok) {
+      console.log(res, "res login form GOOD");
+      // router.push("/vitalli/home");
+      reset();
+    } else {
+      console.log(res.error, "errorrrrrrrr");
+    }
+  });
 
   return (
     <form
-      onSubmit={()=>console.log(data)}
+      onSubmit={onSubmitLogin}
       className="bg-white px-10 py-20 rounded-3xl border-gray-100"
     >
       <h1 className="text-5xl font-semibold text-center">Iniciar sesión</h1>

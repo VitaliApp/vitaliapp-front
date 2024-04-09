@@ -1,6 +1,9 @@
 import React from "react";
+import { useRouter } from "next/navigation";
 
 export default function Benefits() {
+  const router = useRouter();
+
   return (
     <React.Fragment>
       <section className="mt-40">
