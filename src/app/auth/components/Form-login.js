@@ -23,7 +23,7 @@ export default function FormLogin() {
     console.log('RES', res)
     if (res.ok) {
       console.log(res, "res login form GOOD");
-      // router.push("/vitalli/home");
+      router.push("/vitali/home");
       reset();
     } else {
       console.log(res.error, "errorrrrrrrr");

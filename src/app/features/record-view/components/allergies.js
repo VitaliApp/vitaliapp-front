@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-// import { getAllergiesAPI } from "../api/getAllergiesAPI";
+import { getAllergiesAPI } from "../api/getAllergies";
 
 export default function Allergies() {
   const [allergies, setAllergies] = useState();

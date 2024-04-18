@@ -2,8 +2,9 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import AddBtn from "./Add-button";
-import { MdEditSquare, MdDelete } from "react-icons/md";
+// import { MdEditSquare, MdDelete } from "react-icons/md";
 import { useRouter } from "next/navigation";
+
 // import {
 //   deleteAppointmentAPI,
 //   getUserAppointmentsAPI,
@@ -13,7 +14,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function HomeAppointments() {
-//   const router = useRouter();
+  const router = useRouter();
 //   const [appointment, setAppointment] = useState([]);
      const [isLoading, setIsLoading] = useState(true);
 
@@ -42,13 +43,13 @@ export default function HomeAppointments() {
           <div className="pt-1 mx-1 text-gray-600">
             <input
               type="search"
-              placeholder="   Buscar"
+              placeholder="Buscar"
               className="w-17 sm:w-60 lg:w-80 border-2 border-gray-300 bg-white h-8 rounded-full text-sm focus:outline-none"
             />
           </div>
           <div
             className="mt-1.5"
-            onClick={() => router.push("/vitalli/newAppointment")}
+            onClick={() => router.push("/vitali/appointmentForm")}
           >
             <AddBtn />
           </div>
@@ -56,16 +57,17 @@ export default function HomeAppointments() {
           {/* STARTS PLACEHOLDER EMPTY MESSAGE */}
         <div className="mt-6 rounded flex flex-col items-center shadow p-1 bg-[#F9F9F9]">
             <Image
-              src="/doctora-record.svg"
-              width={200}
-              height={200}
+            className="mt-4"
+              src="/ilustrations/doctor.svg"
+              width={300}
+              height={300}
             />
-            <p className="mb-1">Aun no tienes registros de citas</p>
+            <p className="mb-1 mt-4 font-josefin-regular">Aun no tienes registros de citas</p>
             <button
               type="button"
-              className="justify-center rounded m-3 bg-violet-800 px-6 pb-2 pt-2 text-sm font-medium text-white hover:bg-white hover:border hover:border-primary hover:text-primary"
+              className="justify-center rounded m-3 bg-[#6851FF] px-6 pb-2 pt-2 text-sm font-medium text-white hover:bg-white hover:border hover:border-primary hover:text-primary"
             >
-              <Link href="/vitalli/newAppointment">CREAR CITA</Link>
+              <Link href="/vitali/appointmentForm">CREAR CITA</Link>
             </button>
           </div>
         {/* {!appointment.length ? (

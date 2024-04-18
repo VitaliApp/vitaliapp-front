@@ -1,14 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-// import { useSession } from "next-auth/react";
-// import { getUserInfoAPI } from "../api/userProfile";
+import { useSession } from "next-auth/react";
+import { getUserInfoAPI } from "../api/userProfile";
 import Image from "next/image";
-// import formatDateToString from "@/app/helpers/formatDateToString";
+import formatDateToString from "@/app/helpers/formatDateToString";
 
 export default function Profile() {
   const router = useRouter();
-//   const { data: session, status } = useSession();
+  const { data: session, status } = useSession();
   const [userInfo, setUserInfo] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -65,7 +65,7 @@ export default function Profile() {
           </div>
           <div className="">
             <button
-              onClick={() => router.push("/vitalli/profileForm")}
+              onClick={() => router.push("/vitali/profileForm")}
               type="button"
               className="justify-center rounded m-3 bg-[#6851FF] px-6 pb-2 pt-2 text-xs font-medium text-white hover:bg-white hover:border hover:border-[#6851FF] hover:text-[#6851FF]"
             >
@@ -100,7 +100,7 @@ export default function Profile() {
 
         <div className="mt-2">
           <button
-            onClick={() => router.push("/vitalli/profileForm")}
+            onClick={() => router.push("/vitali/profileForm")}
             type="button"
             className="justify-center rounded m-3 bg-[#6851FF] px-6 pb-2 pt-2 text-xs font-medium text-white hover:bg-white hover:border hover:border-[#6851FF] hover:text-[#6851FF]"
           >

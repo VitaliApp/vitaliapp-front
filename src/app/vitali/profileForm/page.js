@@ -2,7 +2,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Loading from "@/app/loading";
+import { useForm } from "react-hook-form";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { updatedUserProfileAPI } from "@/app/features/home/api/userProfile";
 
 export default function ProfileForm() {
   const router = useRouter();
@@ -25,17 +28,17 @@ export default function ProfileForm() {
     console.log(data, "dataaa");
     const res = await updatedUserProfileAPI(data);
     console.log(res, "res");
-    if (res) {
-      console.log("TODO OK");
-      // router.push('/vitalli/home')
-      // reset();
-    } else {
+    if (!res) {
       console.log("ERROR EN ACTUAIZAR");
+    } else {
+      console.log("TODO OK");
+      router.push('/vitali/home')
+      reset();
     }
   });
 
   return (
-    <div className="flex min-h-screen lg:w-full flex-col items-center justify-between">
+    <div className="flex min-h-screen lg:w-full flex-col items-center justify-between mt-8">
       <form
         onSubmit={onSubmitUserUpdated}
         className="md:w-1/2 flex flex-col w-80 border-2 rounded-lg mt-20 mb-6 pt-4 items-center bg-white shadow-xl shadow-violet-600"
@@ -44,7 +47,7 @@ export default function ProfileForm() {
           <h1 className="font-josefin-regular text-xl">Completa tu Perfil</h1>
         </div>
         <div className="flex flex-col m-1 w-4/5 md:w-2/3">
-          <div className="flex flex-col items-center mb-4">
+          {/* <div className="flex flex-col items-center mb-4">
             <div className="flex justify-center">
               <Image
                 className="m-2"
@@ -61,7 +64,7 @@ export default function ProfileForm() {
               {...register("picture")}
               className="file-input file-input-bordered file-input-xs file-input-primary text-xs w-2/5 "
             />
-          </div>
+          </div> */}
 
           <div className="mb-2">
             <label
