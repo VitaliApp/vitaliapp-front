@@ -5,7 +5,7 @@ import Allergies from "@/app/features/record-view/components/allergies";
 import Medicine from "@/app/features/record-view/components/medicine";
 import ChronicDesease from "@/app/features/record-view/components/chronicDesease";
 import ContactEmergency from "@/app/features/record-view/components/contactEmergency";
-import FamilyHistoryRedord from "@/app/features/record-view/components/familyHistoryRecord";
+import FamilyHistoryRedord from "@/app/features/record-view/components/familyHistory";
 import BloodGroup from "@/app/features/record-view/components/bloodGroup";
 
 export default function Expediente() {

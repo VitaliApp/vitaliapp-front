@@ -26,7 +26,7 @@ export default function FormSignin() {
       });
       if (res.ok) {
         console.log(res, "res register form, GOOD");
-        // router.push("/vitalli/home");
+        router.push("/vitali/home");
         reset();
       } else {
         console.log(res.error, "errorrrrrrrr");

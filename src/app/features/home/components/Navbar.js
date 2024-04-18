@@ -1,13 +1,13 @@
 "use client";
 import Image from "next/image";
-// import { signOut } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-// import { useSession, getSession } from "next-auth/react";
+import { useSession, getSession } from "next-auth/react";
 
 export default function NavBar() {
-//   const { data: session, status } = useSession();
-//   console.log(session?.user?.email, 'session')
+  const { data: session, status } = useSession();
+  // console.log(session?.user?.email, 'session')
   const router = useRouter();
   const [navbar, setNavbar] = useState(false);
 
@@ -18,7 +18,7 @@ export default function NavBar() {
           <div className="flex items-center justify-between ml-4 py-1 md:py-3 md:block">
             {/* LOGO */}
             <button
-              onClick={() => router.push("/vitalli/home")}
+              onClick={() => router.push("/vitali/home")}
               className="mt-0"
             >
               <Image src="/logo-lg.svg" width={80} height={30} alt="logo" />
@@ -67,7 +67,7 @@ export default function NavBar() {
                     alt="icono mensaje"
                     className="md:hidden"
                   />
-                  <button onClick={() => router.push("/vitalli/record")}>
+                  <button onClick={() => router.push("/vitali/record")}>
                     Expediente
                   </button>
                 </div>
@@ -82,7 +82,7 @@ export default function NavBar() {
                     alt="icono calendario"
                     className="md:hidden"
                   />
-                  <button onClick={() => router.push("/vitalli/calendar")}>
+                  <button onClick={() => router.push("/vitali/calendar")}>
                     Calendario
                   </button>
                 </div>
@@ -98,7 +98,7 @@ export default function NavBar() {
                     className="md:hidden"
                   />
                   <button
-                    onClick={() => router.push("/vitalli/find-specialist")}
+                    onClick={() => router.push("/vitali/find-specialist")}
                   >
                     {" "}
                     Especialistas{" "}
@@ -119,7 +119,7 @@ export default function NavBar() {
                     alt="icono flecha"
                     className="md:hidden"
                   />
-                  {/* ¡Hola {session?.user?.email}! */}
+                  ¡Hola {session?.user?.email}!
                 </div>
                 <ul
                   tabIndex={0}

@@ -19,7 +19,7 @@ export default function NewsAside() {
           throw new Error("Failed to fetch articles");
         }
         const data = await response.json();
-        console.log(data.articles.urlToImage);
+        console.log(data.articles);
         setArticles(data.articles);
       } catch (error) {
         console.error("Error fetching articles:", error);
@@ -31,7 +31,7 @@ export default function NewsAside() {
 
   return (
     <aside className="mx-2 h-44 md:h-screen overflow-x-auto md:overflow-y-auto items-center">
-      <h1 className="justify-center font-bold">Articulos Recomendados</h1>
+      <h1 className="text-center font-bold">Articulos Recomendados</h1>
       <div className="overflow-x-auto md:overflow-y-auto flex flex-row md:flex-col">
         {articles.slice(0, 5).map((article, index) => (
           <a
@@ -39,13 +39,13 @@ export default function NewsAside() {
             key={index}
             className="rounded-lg w-66 shadow-md p-2 md:mb-4 md:last:mb-0"
           >
-            <img
-              src="../../ilustrations/grupo-salud.svg"
+            {/* <img
+              src="/ilustrations/doctores-juntos.svg"
               alt="imagen de articulo"
               width={250}
-            />
+            /> */}
             <div className="p-2">
-              <p className="text-sm">{article.title}</p>
+              <p className="text-sm hover:text-[#6851FF] hover:font-bold">{article.title}</p>
             </div>
           </a>
         ))}
