@@ -73,7 +73,7 @@ export default function RecordForm() {
           </div>
           {/* end block */}
           <div className="flex w-66 bg-white items-center mt-2 mb-6 md:mt-6">
-            <button onClick={()=>router.push('/vitalli/record')}
+            <button onClick={()=>router.push('/vitali/record')}
             className="btn btn-wide btn-primary text-md md:text-lg hover:bg-white hover:border-primary hover:text-primary">
               Finalizar Editar
             </button>

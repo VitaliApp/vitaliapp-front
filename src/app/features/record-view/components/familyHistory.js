@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-// import { getFamilyHistoryAPI } from "../api/familyHistoryAPI";
+import { getFamilyHistoryAPI } from "../api/familyHistoryAPI";
 
 export default function FamilyHistoryRedord() {
   const [familyHistorys, setFamilyHistory] = useState();

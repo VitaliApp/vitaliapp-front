@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-// import { getBloodGroupAPI } from "../api/bloodGroupAPI";
+import { getBloodGroupAPI } from "../api/bloodGroupAPI";
 
 export default function BloodGroup() {
   const [bloodGroups, setBloodGroup] = useState();

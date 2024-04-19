@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-// import { getMedicineAPI } from "../api/medicineAPI";
+import { getMedicineAPI } from "../api/medicineAPI";
 
 export default function Medicine() {
   const [medicines, setMedicines] = useState();

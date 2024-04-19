@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-// import { getChronicDeseaseAPI } from "../api/chronicDeseaseAPI";
+import { getChronicDeseaseAPI } from "../api/chronicDeseaseAPI";
 
 export default function ChronicDesease() {
   const [chronics, setChronic] = useState();

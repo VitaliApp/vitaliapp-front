@@ -96,7 +96,7 @@ export default function Expediente() {
           <button
             className="btn btn-wide btn-primary text-md md:text-lg hover:bg-white hover:border-primary hover:text-primary"
             type="button"
-            onClick={() => router.push("/vitalli/recordForm")}
+            onClick={() => router.push("/vitali/recordForm")}
           >
             Editar
           </button>
