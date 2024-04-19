@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-// import { getEmergencyContactAPI } from "../api/emergencyContactAPI";
+import { getEmergencyContactAPI } from "../api/emergencyContactAPI";
 
 export default function ContactEmergency() {
   const [contacts, setContacts] = useState();
