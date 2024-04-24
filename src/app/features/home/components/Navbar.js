@@ -15,13 +15,13 @@ export default function NavBar() {
     <nav className="shadow-lg shadow-violet-200 w-full bg-white fixed top-0 left-0 right-0 z-10">
       <div className="justify-between py-0 my-0 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
-          <div className="flex items-center justify-between ml-4 py-1 md:py-3 md:block">
+          <div id="logo-div" className="flex items-center justify-between ml-4 py-1 md:pt-3 md:block">
             {/* LOGO */}
             <button
               onClick={() => router.push("/vitalli/home")}
               className="mt-0"
             >
-              <Image src="/logo-lg.svg" width={80} height={30} alt="logo" />
+              <Image src="/logo-lg.svg" width={100} height={40} alt="logo" />
             </button>
             {/* HAMBURGER BUTTON FOR MOBILE */}
             <div className="md:hidden">
