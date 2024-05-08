@@ -57,6 +57,7 @@ export default function HomeAppointments() {
           {/* STARTS PLACEHOLDER EMPTY MESSAGE */}
         <div className="mt-6 rounded flex flex-col items-center shadow p-1 bg-[#F9F9F9]">
             <Image
+            alt="doctor"
             className="mt-4"
               src="/ilustrations/doctor.svg"
               width={300}

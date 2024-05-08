@@ -2,24 +2,40 @@
 
  import { useForm } from 'react-hook-form';
  import { useState } from 'react';
- import AddBtn from '@/app/features/home/components/Add-button';
+import { createBloodGroupAPI } from '../api/BloodType';
 
  export default function BloodForm() {
 
   const { register, handleSubmit, formState: { errors } } = useForm()
   const [showItem, setShowItem] = useState([])
 
-  const onSubmit = (data) => {
-  // 1. Sacar el valor (allergie) del objeto data
-  const bloodGroup = data.bloodGroup
-  // 2. Agregar el valor (allergie) al array del estado (showItem)
-  showItem.push(bloodGroup)
-  // 3. Actualizar el estado (showItem) mediante su función (setShowItem)
-  setShowItem([...showItem])
-  }
+  const onSubmitCreateBloodGroup = handleSubmit(async (data) => {
+    console.log(data, "dataaa");
+    const res = await createBloodGroupAPI(data);
+    console.log(res, "res");
+    if (!res) {
+      console.log("ERROR EN ACTUAIZAR");
+    } else {
+      console.log("TODO OK");
+      const bloodGroup = data.blood_type;
+      // 2. Agregar el valor (medicine) al array del estado (showItem)
+      showItem.push(bloodGroup);
+      // 3. Actualizar el estado (showItem) mediante su función (setShowItem)
+      setShowItem([...showItem]);
+    }
+  });
+
+//   const onSubmit = (data) => {
+//   // 1. Sacar el valor (allergie) del objeto data
+//   const bloodGroup = data.bloodGroup
+//   // 2. Agregar el valor (allergie) al array del estado (showItem)
+//   showItem.push(bloodGroup)
+//   // 3. Actualizar el estado (showItem) mediante su función (setShowItem)
+//   setShowItem([...showItem])
+//   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}
+    <form onSubmit={onSubmitCreateBloodGroup}
         className="py-3 px-1 h-32 lg:h-56 lg:pr-2 lg:pl-4 shadow-md shadow-violet-400 rounded mb-2 mx-0.5 bg-white">
         <div className="flex flex-row mb-2 lg:my-2">
             <h3 className="ml-2 text-md lg:text-lg font-josefin-regular text-black">Grupo Sanguineo</h3>
@@ -36,7 +52,7 @@
                         <input className="radio radio-sm radio-primary"
                         type="radio" value="A+" name="bloodType"
                             
-                        {...register("bloodGroup")}
+                        {...register("blood_type")}
                         />
                         <span className="ml-1 text-sm">A+</span>
                     </label>
@@ -44,7 +60,7 @@
                         <input className="radio radio-sm radio-primary"
                         type="radio" value="A-" name="bloodType"
                             
-                        {...register("bloodGroup")}
+                        {...register("blood_type")}
                         />
                         <span className="ml-1 text-sm">A-</span>
                     </label>
@@ -52,7 +68,7 @@
                         <input className="radio radio-sm radio-primary"
                         type="radio" value="B+" name="bloodType"
                             
-                        {...register("bloodGroup")}
+                        {...register("blood_type")}
                         />
                         <span className="ml-1 text-sm">B+</span>
                     </label>
@@ -60,7 +76,7 @@
                         <input className="radio radio-sm radio-primary"
                         type="radio" value="B-" name="bloodType"
                             
-                        {...register("bloodGroup")}
+                        {...register("blood_type")}
                         />
                         <span className="ml-1 text-sm">B-</span>
                     </label>
@@ -70,7 +86,7 @@
                         <input className="radio radio-sm radio-primary"
                         type="radio" value="AB+" name="bloodType"
                             
-                        {...register("bloodGroup")}
+                        {...register("blood_type")}
                         />
                         <span className="ml-1 text-sm">AB+</span>
                     </label>
@@ -78,7 +94,7 @@
                         <input className="radio radio-sm radio-primary"
                         type="radio" value="AB-" name="bloodType"
                             
-                        {...register("bloodGroup")}
+                        {...register("blood_type")}
                         />
                         <span className="ml-1 text-sm">AB-</span>
                     </label>
@@ -86,7 +102,7 @@
                         <input className="radio radio-sm radio-primary"
                         type="radio" value="O+" name="bloodType"
                             
-                    {...register("bloodGroup")}
+                    {...register("blood_type")}
                     />
                     <span className="ml-1 mr-1 text-sm">O+</span>
                     </label>
@@ -94,7 +110,7 @@
                         <input className="radio radio-sm radio-primary"
                         type="radio" value="O-" name="bloodType"
                                 
-                        {...register("bloodGroup")}
+                        {...register("blood_type")}
                         />
                         <span className="ml-1 text-sm">O-</span>
                     </label>
