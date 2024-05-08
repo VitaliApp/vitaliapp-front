@@ -2,9 +2,13 @@
 
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import AddBtn from "../../home/components/Add-button";
+import { createAllergyAPI } from "../api/Allergies";
 
 export default function AllergyForm() {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -13,15 +17,22 @@ export default function AllergyForm() {
   } = useForm();
   const [showItem, setShowItem] = useState([]);
 
-  const onSubmit = (data) => {
-    // 1. Sacar el valor (medicine) del objeto data
-    const allergy = data.allergy;
-    // 2. Agregar el valor (medicine) al array del estado (showItem)
-    showItem.push(allergy);
-    // 3. Actualizar el estado (showItem) mediante su función (setShowItem)
-    setShowItem([...showItem]);
-    reset();
-  };
+  const onSubmitCreateAllergy = handleSubmit(async (data) => {
+    console.log(data, "dataaa");
+    const res = await createAllergyAPI(data);
+    console.log(res, "res");
+    if (!res) {
+      console.log("ERROR EN ACTUAIZAR");
+    } else {
+      console.log("TODO OK");
+      const allergy = data.allergies;
+      // 2. Agregar el valor (medicine) al array del estado (showItem)
+      showItem.push(allergy);
+      // 3. Actualizar el estado (showItem) mediante su función (setShowItem)
+      setShowItem([...showItem]);
+      reset();
+    }
+  });
 
   const handleDelete = (index) => {
     const updatedItems = [...showItem];
@@ -31,7 +42,7 @@ export default function AllergyForm() {
 
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={onSubmitCreateAllergy}
       className="py-3 px-1 h-32 lg:h-44 lg:px-2 bg-white shadow-md shadow-violet-400 rounded mb-2 mx-0.5"
     >
       <div className="flex flex-row justify-between mb-2 lg:my-2">
@@ -44,7 +55,7 @@ export default function AllergyForm() {
           type="text"
           placeholder="Ingresa una a una"
           className="mr-2 input input-xs lg:input-sm input-bordered input-primary w-full max-w-xs"
-          {...register("allergy", {
+          {...register("allergies", {
             required: { value: true, message: "Este campo es requerido" },
             maxLength: {
               value: 18,
