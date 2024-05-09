@@ -83,7 +83,7 @@ export default function NavBar() {
                     className="md:hidden"
                   />
                   <button onClick={() => router.push("/vitali/calendar")}>
-                    Calendario
+                    Calendario de Hábitos
                   </button>
                 </div>
               </li>
@@ -98,10 +98,10 @@ export default function NavBar() {
                     className="md:hidden"
                   />
                   <button
-                    onClick={() => router.push("/vitali/find-specialist")}
+                    onClick={() => router.push("/vitali/progress")}
                   >
                     {" "}
-                    Especialistas{" "}
+                    Mi progreso{" "}
                   </button>
                 </div>
               </li>
