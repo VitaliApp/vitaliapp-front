@@ -33,7 +33,7 @@ export default function NewsAside() {
     <aside className="mx-2 h-44 md:h-screen overflow-x-auto md:overflow-y-auto items-center">
       <h1 className="text-center font-bold">Articulos Recomendados</h1>
       <div className="overflow-x-auto md:overflow-y-auto flex flex-row md:flex-col">
-        {articles.slice(0, 5).map((article, index) => (
+        {articles.slice(0, 10).map((article, index) => (
           <a
             href={article.url}
             key={index}
