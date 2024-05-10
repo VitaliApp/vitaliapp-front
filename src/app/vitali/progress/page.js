@@ -9,7 +9,6 @@ import React from "react";
 export default function Progress() {
   return (
     <React.Fragment>
-
       <div className="mb-16">
         <div className="md:flex md:justify-center">
           <FeedingGrhapic />
