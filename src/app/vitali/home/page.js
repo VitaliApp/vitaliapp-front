@@ -16,7 +16,7 @@ export default function Home() {
   // console.log(session, "session user");
 
   return (
-    <div className="h-screen">
+    <div className="">
       <div className="mt-20 md:grid md:grid-cols-12">
         <aside className="md:col-span-3">
           <Profile />
