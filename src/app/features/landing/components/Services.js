@@ -4,14 +4,15 @@ import Image from "next/image";
 export default function Services() {
   return (
     <React.Fragment>
-      <section className="text-center mt-32 mb-36">
+      <section id="services" className="text-center mt-32 mb-36">
         <div className="flex justify-center  text-xl lg:text-3xl mb-11">
           <h2 className="font-josefin-regular font-bold text-[#704FAA]">
             Nuestros servicios
           </h2>
         </div>
         <div className=" md:flex md:justify-evenly mt-6">
-          <div className="card card-compact w-96 bg-base-100 shadow-xl mt-8 ml-4">
+
+          <div className="card card-compact w-96 bg-base-100 shadow-xl mt-8 ml-4 hover:drop-shadow-2xl">
             <figure>
               <Image
                 src="/ilustrations/doctor.svg"
@@ -33,7 +34,7 @@ export default function Services() {
             </div>
           </div>
 
-          <div className="card card-compact w-96 bg-base-100 shadow-xl mt-8 ml-4">
+          <div className="card card-compact w-96 bg-base-100 shadow-xl mt-8 ml-4 hover:drop-shadow-2xl">
             <figure>
               <Image
                 src="/ilustrations/health.svg"
@@ -55,7 +56,7 @@ export default function Services() {
             </div>
           </div>
 
-          <div className="card card-compact w-96 bg-base-100 shadow-xl mt-8 ml-4">
+          <div className="card card-compact w-96 bg-base-100 shadow-xl mt-8 ml-4 hover:drop-shadow-2xl">
             <figure>
               <Image
                 src="/ilustrations/enfermera-morado.svg"

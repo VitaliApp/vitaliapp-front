@@ -5,7 +5,7 @@ export default function Info() {
   return (
     <React.Fragment>
       <div className="divider"></div>
-      <section className="">
+      <section id="about" className="">
         <div className="card lg:card-side px-24 flex">
           <figure>
             <Image

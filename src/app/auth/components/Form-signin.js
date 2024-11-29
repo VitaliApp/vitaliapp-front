@@ -42,7 +42,7 @@ export default function FormSignin() {
       className="bg-red mb-4 rounded-3xl border-gray-100"
     >
       <h1 className="text-5xl font-semibold font-josefin-regular">
-        ¡Bienvenido a <span className="text-violetVitalli">VitalliApp</span>!
+        ¡Bienvenido a <span className="text-violetVitalli">VitaliApp</span>!
       </h1>
       <p className="font-lato-regular text-lg text-gray-500 mt-4">
         Tu salud, tu control, tu camino; regístrate.
