@@ -9,7 +9,7 @@ export default function HeroSection() {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="flex justify-center pt-2 mt-6 lg:mt-24 lg:mr-2">
             <Image
-              className=" lg:w-full rounded-lg shadow-2xl"
+              className=" lg:w-full rounded-lg shadow-2xl "
               alt="hero logo"
               src="/ilustrations/estetoscopio.svg"
               width={300}

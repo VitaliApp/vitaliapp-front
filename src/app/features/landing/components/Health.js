@@ -1,10 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import { Slide } from "react-awesome-reveal";
 
 export default function Health() {
   return (
     <React.Fragment>
-      <section className="mt-36">
+      <section id="benefits" className="mt-36">
+        <Slide damping={0.1} direction="right">
         <div className="card lg:card-side px-24 flex">
           <div className="card-body">
             <h2 className="card-title font-josefin-regular">
@@ -26,7 +28,9 @@ export default function Health() {
             />
           </figure>
         </div>
-
+        </Slide>
+        
+        <Slide damping={0.1}>
         <div className="card lg:card-side px-24 flex mt-40">
           <figure>
             <Image
@@ -48,6 +52,8 @@ export default function Health() {
             </p>
           </div>
         </div>
+        </Slide>
+        
       </section>
     </React.Fragment>
   );
