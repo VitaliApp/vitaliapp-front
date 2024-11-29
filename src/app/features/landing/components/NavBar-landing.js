@@ -117,7 +117,7 @@ function NavBar() {
                     "lg:text-lg"
                   )}
                 >
-                  <Link href="#about" onClick={() => setNavbar(!navbar)}>
+                  <Link href="#services" onClick={() => setNavbar(!navbar)}>
                     Servicios
                   </Link>
                 </li>
@@ -161,7 +161,7 @@ function NavBar() {
                     "lg:text-lg"
                   )}
                 >
-                  <Link href="#blog" onClick={() => setNavbar(!navbar)}>
+                  <Link href="#benefits" onClick={() => setNavbar(!navbar)}>
                     Beneficios
                   </Link>
                 </li>
