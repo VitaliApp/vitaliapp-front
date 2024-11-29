@@ -40,25 +40,15 @@ export default function ExerciseForm() {
           })}
         />
         <label htmlFor="typetime" className="font-ligth text-sm mr-4">
-          <input
-            type="radio"
-            name="typetime"
-            value="hrs"
-            {...register("typetime", {
-              required: "*Éste campo es obligatorio",
-            })}
-          />
+          <input type="radio" name="typetime" value="hrs"
+          {...register("typetime", {
+            required: "*Éste campo es obligatorio",
+          })} />
           Hrs
         </label>
         <label htmlFor="typetime" className="font-ligth text-sm">
-          <input
-            type="radio"
-            name="typetime"
-            value="min"
-            defaultChecked={true}
-            {...register("typetime", {
-              required: "*Éste campo es obligatorio",
-            })}
+          <input type="radio" name="typetime" value="min" defaultChecked={true} 
+          
           />
           Min
         </label>

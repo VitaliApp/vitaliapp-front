@@ -20,7 +20,7 @@ export default function FormLogin() {
       password: data.password,
       redirect: false,
     });
-    console.log('RES', res)
+    console.log("RES", res);
     if (res.ok) {
       console.log(res, "res login form GOOD");
       router.push("/vitali/home");
@@ -31,56 +31,72 @@ export default function FormLogin() {
   });
 
   return (
-    <form
-      onSubmit={onSubmitLogin}
-      className="bg-white px-10 py-20 rounded-3xl border-gray-100"
-    >
-      <h1 className="text-5xl font-semibold text-center">Iniciar sesión</h1>
-      <div className="mt-8">
-        <div>
-          <label htmlFor="login-email" className="text-lg font-medium">
-            Correo electrónico
-          </label>
-          <input
-            id="login-email"
-            type="email"
-            className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
-            placeholder="Ingresa tu correo electrónico"
-            {...register("email", { required: "*Éste campo es obligatorio" })}
-          />
-          <p className="text-[12px] text-red-600">{errors.email?.message}</p>
-        </div>
-        <div>
-          <label htmlFor="signin-password" className="text-lg font-medium">
-            Contraseña
-          </label>
-          <input
-            id="signin-password"
-            type="password"
-            className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
-            placeholder="Ingresa tu contraseña"
-            {...register("password", {
-              required: "Éste campo es obligatorio",
-            })}
-          />
-          {/* cambiar el tipo de error al no coincidir la contraseña correcta <p className="text-[12px] text-red-600">{ errors.password?.message }</p> */}
-        </div>
-        <div className="mt-8 flex justify-between items-center">
-          <div>
-            <input type="checkbox" id="remember" />
-            <label className="ml-2 font-medium text-base" htmlFor="remember">
-              Recordar contraseña
-            </label>
+    <>
+      <div className="flex flex-col">
+        <form
+          onSubmit={onSubmitLogin}
+          className="bg-white mb-8 rounded-3xl border-gray-100"
+        >
+          <h1 className="text-5xl font-semibold text-center">Iniciar sesión</h1>
+          <div className="mt-8">
+            <div>
+              <label htmlFor="login-email" className="text-lg font-medium">
+                Correo electrónico
+              </label>
+              <input
+                id="login-email"
+                type="email"
+                className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
+                placeholder="Ingresa tu correo electrónico"
+                {...register("email", {
+                  required: "*Éste campo es obligatorio",
+                })}
+              />
+              <p className="text-[12px] text-red-600">
+                {errors.email?.message}
+              </p>
+            </div>
+            <div>
+              <label htmlFor="signin-password" className="text-lg font-medium">
+                Contraseña
+              </label>
+              <input
+                id="signin-password"
+                type="password"
+                className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1 bg-transparent"
+                placeholder="Ingresa tu contraseña"
+                {...register("password", {
+                  required: "Éste campo es obligatorio",
+                })}
+              />
+              {/* cambiar el tipo de error al no coincidir la contraseña correcta <p className="text-[12px] text-red-600">{ errors.password?.message }</p> */}
+            </div>
+            <div className="mt-8 flex justify-between items-center">
+              <div>
+                <input type="checkbox" id="remember" />
+                <label
+                  className="ml-2 font-medium text-base"
+                  htmlFor="remember"
+                >
+                  Recordar contraseña
+                </label>
+              </div>
+              <button className="font-medium text-bse text-violetVitalli">
+                Olvidé mi contraseña
+              </button>
+            </div>
+            <div className="mt-8 flex flex-col gap-y-4">
+              <button className="active:scale-[.98] active:duration-75 hover:scale-[1.01] easy-in-out transition-all py-3 rounded-xl bg-violetVitalli text-white text-lg font-bold">
+                Iniciar sesión
+              </button>
+            </div>
           </div>
-          <button className="font-medium text-bse text-violetVitalli">
-            Olvidé mi contraseña
-          </button>
-        </div>
-        <div className="mt-8 flex flex-col gap-y-4">
-          <button className="active:scale-[.98] active:duration-75 hover:scale-[1.01] easy-in-out transition-all py-3 rounded-xl bg-violetVitalli text-white text-lg font-bold">
-            Iniciar sesión
-          </button>
-          <button className="flex roundend-xl py-3 border-2 border-gray-100 items-center justify-center gap-2 active:scale-[.98] active:duration-75 hover:scale-[1.01] easy-in-out transition-all">
+        </form>
+        <div className=" flex flex-col gap-y-4">
+          <button
+            onClick={() => signIn('google')}
+            className="flex roundend-xl py-3 border-2 border-gray-100 items-center justify-center gap-2 active:scale-[.98] active:duration-75 hover:scale-[1.01] easy-in-out transition-all"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
@@ -116,6 +132,6 @@ export default function FormLogin() {
           </span>
         </p>
       </div>
-    </form>
+    </>
   );
 }
