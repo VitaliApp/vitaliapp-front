@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 import AllergyForm from "@/app/features/record-form/components/AllergyForm";
 import MedicineForm from "@/app/features/record-form/components/MedicineForm";

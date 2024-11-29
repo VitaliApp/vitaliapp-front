@@ -112,14 +112,14 @@ export default function HomeAppointments() {
               </div>
 
               <div className="collapse-content  font-lato-regular md:flex">
-                <div>
+                {/* <div>
                   <Image
                     alt="receta-img"
                     width={200}
                     height={150}
                     src="../ilustrations/big-landing.svg"
                   />
-                </div>
+                </div> */}
                 <div className="md:ml-8">
                   <p className="font-bold">
                     Costo: <span className="font-normal">${appo.cost}</span>

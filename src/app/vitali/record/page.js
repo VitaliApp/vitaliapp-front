@@ -18,7 +18,7 @@ export default function Expediente() {
     >
       <div className="container flex flex-col items-center mt-2 lg:max-w-6xl mx-auto lg:px-8">
         <div className="flex items-center justify-center md:flex lg:my-4 my-2">
-          <h2 className="text-xl font-josefin-regular text-bold">Expediente</h2>
+          <h2 className="text-xl font-josefin-regular text-bold">Mi expediente</h2>
           <div className="ml-4"></div>
         </div>
 
