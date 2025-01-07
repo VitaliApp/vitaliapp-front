@@ -12,6 +12,7 @@ import {
 import formatDateToString from "@/app/helpers/formatDateToString";
 
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 export default function HomeAppointments() {
   const router = useRouter();
@@ -33,6 +34,11 @@ export default function HomeAppointments() {
     await deleteAppointmentAPI(id);
   };
 
+  if(isLoading){
+    <React.Fragment>
+              <p className="text-center mt-28  font-light">Loading...</p>
+    </React.Fragment>
+  }
   return (
     <React.Fragment>
       <div className="h-screen overflow-y-auto border border-gay-300 border-y-0 md:px-3">

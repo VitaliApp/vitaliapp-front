@@ -20,12 +20,12 @@ export default function Profile() {
     };
 
     getData();
-  }, []);
+  }, [status]);
 
   if (isLoading) {
     return (
       <React.Fragment>
-        <p>Loading...</p>
+        <p className="text-center mt-28  font-light">Loading...</p>
         {/* <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto">
           <div className="animate-pulse flex space-x-4">
             <div className="rounded-full bg-slate-700 h-10 w-10"></div>
@@ -89,17 +89,18 @@ export default function Profile() {
               alt="profile"
               src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
             /> */}
+            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
           </div>
         </div>
 
-        <div className="mt-4 text-center">
-          <p className="text-lg font-extrabold">{`${userInfo.name} ${userInfo.lastName}`}</p>
-          <div>
-            <p className="text-md">Edad: {userInfo.age}</p>
-            <p className="text-md">Sexo: {userInfo.gender}</p>
-            <p className="text-md">Telefono: {userInfo.telephone}</p>
-            <p className="text-md">Fecha de nacimiento: {birthdate}</p>
-            <p className="text-md">Domicilio: {userInfo.adress}</p>
+        <div className="mt-4">
+          <p className="text-lg  text-center font-extrabold">{`${userInfo.name} ${userInfo.lastName}`}</p>
+          <div className="w-44 ml-8 text-justify">
+            <p className="text-base font-light">Fecha de Nacimiento: {birthdate}</p>
+            <p className="text-base font-light">Telefono: {userInfo.telephone}</p>
+            <p className="text-base font-light">Domicilio: {userInfo.adress}</p>
+            <p className="text-base font-light">Sexo: {userInfo.gender}</p>
+            <p className="text-base font-light">Edad: {userInfo.age}</p>
           </div>
         </div>
 
@@ -115,12 +116,12 @@ export default function Profile() {
       </div>
 
       {/* profile mobile con info */}
-      <div className="stats shadow flex justify-center md:hidden">
+      <div className="mb-8 stats shadow flex justify-center md:hidden">
         <div className="stat">
           <div className="stat-figure text-secondary">
             <div className="avatar">
               <div className="w-16 rounded-full">
-                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
               </div>
             </div>
           </div>
@@ -128,8 +129,10 @@ export default function Profile() {
             {userInfo.name} {userInfo.lastName}
           </div>
           <div className="stat-desc ">Edad: {userInfo.age}</div>
-          <div className="stat-desc">Genero: {userInfo.gender}</div>
+          <div className="stat-desc">Sexo: {userInfo.gender}</div>
           <div className="stat-desc">Telefono: {userInfo.telephone}</div>
+          <div className="stat-desc">Domicilio: {userInfo.adress}</div>
+          <div className="stat-desc">Fecha de Nacimiento: {birthdate}</div>
         </div>
       </div>
     </React.Fragment>
